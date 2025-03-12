@@ -1,5 +1,5 @@
 # 使用Node.js 20的alpine版本作为基础镜像
-FROM node:20.18.0
+FROM node:20-alpine
 
 # 安装pm2全局依赖
 RUN npm install -g pm2

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * @name HeaderItem组件
  */
@@ -10,7 +11,7 @@ interface HeaderItemProps {
 }
 
 const HeaderItem: React.FC<HeaderItemProps> = (props) => {
-  const { children, className } = props || {};
+  const { className } = props || {};
   return (
     <div
       className={classNames([
@@ -18,7 +19,7 @@ const HeaderItem: React.FC<HeaderItemProps> = (props) => {
         className,
       ])}
     >
-      {children}
+      {props?.children}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 # 使用Node.js 20的alpine版本作为基础镜像
-FROM node:20-alpine
+FROM node:20.18.0
 
 # 安装pm2全局依赖
 RUN npm install -g pm2
@@ -18,14 +18,10 @@ RUN pnpm install
 COPY . .
 
 # 构建项目
-RUN npm run build
+RUN pnpm run build
 
 # 暴露3000端口
 EXPOSE 3002
 
-# 设置生产环境变量
-ENV NODE_ENV=production
-ENV PORT=3002
-
 # 使用pm2启动服务（保持日志输出）
-CMD ["pnpm", "start"]
+CMD ["pm2-runtime", "start", "server.js", "--", "--port", "3002"]

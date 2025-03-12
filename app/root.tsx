@@ -10,7 +10,6 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import zhCN from "antd/locale/zh_CN";
 
 import "./tailwind.css";
 import { useEffect } from "react";
@@ -29,16 +28,15 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export function Layout(props: {
-  children?: React.ReactNode;
-  [keys: string]: any;
-}) {
+export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const loading = document.getElementById("loading-index");
     if (loading) {
       loading.style.display = "none";
     }
   }, []);
+
+  console.log(children, "children");
 
   return (
     <html lang="en">
@@ -49,20 +47,17 @@ export function Layout(props: {
         <Links />
       </head>
       <body>
-        {props?.children ? (
-          <div
-            className="fixed w-screen h-screen bg-[#fff] transition-opacity duration-300 ease-in-out z-[1]"
-            id="loading-index"
-          >
-            <div className="zonal top-0 bottom-0 left-0 right-0 m-auto" />
-          </div>
-        ) : (
-          <div className="flex flex-col w-screen h-screen overflow-x-hidden overflow-y-auto bg-[#fff] px-4 sm:px-8 md:px-16 lg:px-32 pt-8 pb-8">
-            {props.children}
-            <ScrollRestoration />
-            <Scripts />
-          </div>
-        )}
+        <div
+          className="fixed w-screen h-screen bg-[#fff] transition-opacity duration-300 ease-in-out z-[1]"
+          id="loading-index"
+        >
+          <div className="zonal top-0 bottom-0 left-0 right-0 m-auto" />
+        </div>
+        <div className="flex flex-col w-screen h-screen overflow-x-hidden overflow-y-auto bg-[#fff] px-4 sm:px-8 md:px-16 lg:px-32 pt-8 pb-8">
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </div>
       </body>
     </html>
   );

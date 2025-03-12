@@ -14,7 +14,6 @@
     "@remix-run/express": "^2.16.0",
     "@remix-run/node": "^2.16.0",
     "@remix-run/react": "^2.16.0",
-    "antd": "^5.24.3",
     "classnames": "^2.5.1",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",

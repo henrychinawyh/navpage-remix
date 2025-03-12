@@ -2,7 +2,6 @@
  * @name 头部组件
  */
 
-import { Row, Space } from "antd";
 import Clock from "./components/Clock";
 import Holiday from "./components/Holiday";
 import OutWork from "./components/OutWork";
@@ -18,8 +17,8 @@ export default function Header(props: HeaderProps) {
   const { navData, activeNavId } = props || {};
 
   return (
-    <Space direction="vertical" className="w-full mb-4">
-      <div className="flex items-center w-full">
+    <div className="flex flex-col w-full mb-4">
+      <div className="flex items-center w-full mb-4">
         <HeaderItem className="w-full sm:w-[200px]">
           <Clock />
         </HeaderItem>
@@ -32,9 +31,9 @@ export default function Header(props: HeaderProps) {
       </div>
 
       {/* 搜索栏 */}
-      <div></div>
+      {/* <div className=""></div> */}
       {/* 导航栏 */}
       <NavBar navData={navData} activeNavId={activeNavId} />
-    </Space>
+    </div>
   );
 }

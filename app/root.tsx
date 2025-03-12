@@ -13,11 +13,7 @@ import type { LinksFunction } from "@remix-run/node";
 import zhCN from "antd/locale/zh_CN";
 
 import "./tailwind.css";
-import { ConfigProvider } from "antd";
-import dayjs from "dayjs";
 import { useEffect } from "react";
-
-dayjs.locale("zh-cn");
 
 // 这个会被自动导入到html的head中，并且每个路由都可以单独导出一个links，他们会被收集并渲染到<Links />
 export const links: LinksFunction = () => [
@@ -57,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="zonal top-0 bottom-0 left-0 right-0 m-auto" />
         </div>
         <div className="flex flex-col w-screen h-screen overflow-x-hidden overflow-y-auto bg-[#fff] px-4 sm:px-8 md:px-16 lg:px-32 pt-8 pb-8">
-          <ConfigProvider locale={zhCN}>{children}</ConfigProvider>
+          {children}
           <ScrollRestoration />
           <Scripts />
         </div>

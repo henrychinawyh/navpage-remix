@@ -45,13 +45,7 @@ app.use(morgan("tiny"));
 // handle SSR requests
 app.all("*", remixHandler);
 
-// 在Vercel环境中，我们不需要显式启动服务器
-if (process.env.NODE_ENV !== 'production') {
-  const port = process.env.PORT || 3002;
-  app.listen(port, () =>
-    console.log(`Express server listening at http://localhost:${port}`)
-  );
-}
-
-// 导出app实例供Vercel使用
-export default app;
+const port = process.env.PORT || 3002;
+app.listen(port, () =>
+  console.log(`Express server listening at http://localhost:${port}`)
+);

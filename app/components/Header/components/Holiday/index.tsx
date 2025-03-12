@@ -69,7 +69,7 @@ const Holiday = () => {
       </div>
       {/* 节日日历 */}
       <div className="text-xs  flex-1  flex-col h-full justify-between hidden ml-4 xl:flex">
-        {holiday.map((item) => (
+        {holiday?.map((item) => (
           <Description
             key={item.date}
             prefix={

@@ -26,7 +26,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
   return (
     <div className="flex w-full flex-wrap md:overflow-x-auto md:flex-nowrap">
-      {navData.map((item: any, index: number) => (
+      {navData?.map((item: any, index: number) => (
         <NavLink
           replace
           to={`/${index === 0 ? "" : item.id}`}
@@ -42,7 +42,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             setActiveId(item.id);
           }}
         >
-          {item.groupName}
+          {item?.groupName}
         </NavLink>
       ))}
     </div>

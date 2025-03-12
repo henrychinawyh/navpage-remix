@@ -33,6 +33,7 @@ COPY --from=builder /app/server.js ./server.js
 
 # 设置环境变量
 ENV NODE_ENV=production
+ENV PORT=3002
 
 # 暴露端口
 EXPOSE 3002

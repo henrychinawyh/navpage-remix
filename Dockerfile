@@ -25,6 +25,7 @@ EXPOSE 3002
 
 # 设置生产环境变量
 ENV NODE_ENV=production
+ENV PORT=3002
 
 # 使用pm2启动服务（保持日志输出）
 CMD ["pm2-runtime", "start", "server.js", "--", "--port", "3002"]

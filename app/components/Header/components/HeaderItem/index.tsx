@@ -19,7 +19,9 @@ const HeaderItem: React.FC<HeaderItemProps> = (props) => {
         className,
       ])}
     >
-      {props.children ? props.children : (
+      {props?.children ? (
+        props.children
+      ) : (
         <div className="text-red-500 text-sm">内容加载失败</div>
       )}
     </div>

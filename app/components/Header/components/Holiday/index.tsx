@@ -4,6 +4,7 @@
 
 import { useState } from "react";
 import { Description, Prefix } from "./Description";
+import classNames from "classnames";
 
 interface HolidayDataProps {
   name: string;
@@ -36,15 +37,45 @@ const Holiday = () => {
   ]);
 
   return (
-    <div className="flex items-center h-full bg-[#fff] py-4">
-      {/* 最近节日 */}
-      <div className="flex flex-col h-full justify-between max-[1280px]:w-full max-[1280px]:items-center">
-        <div className="text-base text-[#666]">距离{`xx`}节</div>
-        <div className="text-2xl text-center font-medium  text-[#000]">
+    <div
+      className={classNames([
+        // 基础样式
+        "bg-[#fff]",
+        // 布局样式
+        "flex items-center h-full py-4 sm:px-4 md:px-8 xl:px-4",
+      ])}
+    >
+      <div
+        className={classNames([
+          // 布局样式
+          "flex flex-col h-full justify-between max-[1280px]:w-full max-[1280px]:items-center",
+        ])}
+      >
+        <div
+          className={classNames([
+            // 文本样式
+            "text-base text-[#666]",
+          ])}
+        >
+          距离{`xx`}节
+        </div>
+        <div
+          className={classNames([
+            // 文本样式
+            "text-2xl text-center font-medium text-[#000]",
+          ])}
+        >
           28天
         </div>
         {/* 调休日期日期 */}
-        <div className="text-xs flex flex-col">
+        <div
+          className={classNames([
+            // 布局样式
+            "flex flex-col",
+            // 文本样式
+            "text-xs",
+          ])}
+        >
           <Description
             prefix={
               <Prefix
@@ -68,8 +99,15 @@ const Holiday = () => {
         </div>
       </div>
       {/* 节日日历 */}
-      <div className="text-xs  flex-1  flex-col h-full justify-between hidden ml-4 xl:flex">
-        {holiday?.map((item) => (
+      <div
+        className={classNames([
+          // 布局样式
+          "flex-1 flex-col h-full justify-between ml-4 hidden xl:flex",
+          // 文本样式
+          "text-xs",
+        ])}
+      >
+        {holiday.map((item) => (
           <Description
             key={item.date}
             prefix={

@@ -1,11 +1,11 @@
-import { vitePlugin as remix } from "@remix-run/dev"
-import { defineConfig } from "vite"
-import tsconfigPaths from "vite-tsconfig-paths"
-import path from "path"
+import { vitePlugin as remix } from "@remix-run/dev";
+import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import path from "path";
 
 declare module "@remix-run/node" {
   interface Future {
-    v3_singleFetch: true
+    v3_singleFetch: true;
   }
 }
 
@@ -31,9 +31,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://220.166.222.166:7202",
+        target: "http://220.166.222.65:5972",
         changeOrigin: true,
       },
     },
   },
-})
+});

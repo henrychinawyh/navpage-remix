@@ -1,0 +1,21 @@
+.link-content-image svg {
+  transform: scale(2);
+}
+
+@media (width < 1024px) {
+  .link-content-image svg {
+    transform: scale(1.8);
+  }
+}
+
+@media (width < 768px) {
+  .link-content-image svg {
+    transform: scale(1.7);
+  }
+}
+
+@media (width < 640px) {
+  .link-content-image svg {
+    transform: scale(1.6);
+  }
+}

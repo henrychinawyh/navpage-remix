@@ -6,5 +6,5 @@ export const config = {
   tokenKey: "token",
   // 用户信息在localStorage中的键名
   userKey: "nickname",
-  host: "http://220.166.222.166:7202",
-}
+  host: "http://220.166.219.150:3180",
+};

@@ -2,37 +2,44 @@
  * @name 头部组件
  */
 
-import Clock from "./components/Clock";
-import Holiday from "./components/Holiday";
-import OutWork from "./components/OutWork";
-import NavBar, { NavGroupDataProps } from "./components/NavBar";
-import HeaderItem from "./components/HeaderItem";
+// import Clock from "./components/Clock";
+// import Holiday from "./components/Holiday";
+// import OutWork from "./components/OutWork";
+import NavBar from "./components/NavBar";
+// import HeaderItem from "./components/HeaderItem";
+import { NavBarProps } from "~/typings/nav";
+import { Top } from "./components/Top";
+import classNames from "classnames";
+import SearchEngine from "./components/Search";
 
-interface HeaderProps {
-  navData: NavGroupDataProps[];
-  activeNavId: number;
-}
-
-export default function Header(props: HeaderProps) {
+export default function Header(props: NavBarProps) {
   const { navData, activeNavId } = props || {};
 
   return (
-    <div className="flex flex-col w-full mb-4">
-      <div className="flex items-center w-full mb-4">
+    <div
+      className={classNames([
+        // 基础样式
+        "flex flex-col w-full mb-4 bg-[#ffffff]",
+        // 暗黑模式样式
+        "dark:bg-[#0f0f0f]",
+      ])}
+    >
+      {/* <div className="flex items-center w-full mb-4">
         <HeaderItem className="w-full sm:w-[200px]">
           <Clock />
         </HeaderItem>
-        <HeaderItem className="hidden sm:block sm:px-0 md:px-8 xl:px-4">
+        <HeaderItem className="hidden sm:block">
           <Holiday />
         </HeaderItem>
         <HeaderItem className="hidden sm:block">
           <OutWork />
         </HeaderItem>
-      </div>
+      </div> */}
+      <Top />
 
-      {/* 搜索栏 */}
-      {/* <div className=""></div> */}
-      {/* 导航栏 */}
+      {/* 搜索框 */}
+      <SearchEngine />
+
       <NavBar navData={navData} activeNavId={activeNavId} />
     </div>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /**
  * @name HeaderItem组件
  */
@@ -10,20 +9,19 @@ interface HeaderItemProps {
   className?: string;
 }
 
-const HeaderItem: React.FC<HeaderItemProps> = (props) => {
-  const { className } = props || {};
+export const HeaderItem: React.FC<HeaderItemProps> = (props) => {
+  const { children, className } = props || {};
+
   return (
     <div
       className={classNames([
-        "shadow-[rgba(0,0,0,0.35)_0px_5px_15px] h-[120px] rounded-[16px] overflow-hidden padding-[0_!important] sm:mr-4",
+        // 基础样式
+        "h-[120px] bg-[#fff] rounded-lg shadow-sm",
+        // 响应式样式
         className,
       ])}
     >
-      {props?.children ? (
-        props.children
-      ) : (
-        <div className="text-red-500 text-sm">内容加载失败</div>
-      )}
+      {children}
     </div>
   );
 };

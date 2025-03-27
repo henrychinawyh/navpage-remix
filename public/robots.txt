@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# 禁止访问的路径
+Disallow: /api/
+Disallow: /admin/
+
+# 站点地图
+Sitemap: https://nav.lixiang.kim/sitemap.xml
+
+# 爬虫抓取延迟（秒）
+Crawl-delay: 10

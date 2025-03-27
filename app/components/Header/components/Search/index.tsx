@@ -5,7 +5,8 @@
 import classNames from "classnames";
 import { Input } from "~/components/ui/input";
 import { SelectEngine } from "./components/SelectEngine";
-import { MutableRefObject, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { Label } from "@radix-ui/react-label";
 
 export default function SearchEngine() {
   const engineRef = useRef<{ engine: string }>();
@@ -26,23 +27,25 @@ export default function SearchEngine() {
         ])}
       >
         <SelectEngine ref={engineRef} />
-        <Input
-          value={value || undefined}
-          type="search"
-          className={classNames([
-            "outline-none border-none shadow-none",
-            "focus-visible:outline-none focus-visible:ring-0",
-          ])}
-          autoFocus
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          onKeyUp={(e) => {
-            if (e.key === "Enter") {
-              window.open(engineRef.current?.engine + value);
-            }
-          }}
-        />
+        <Label htmlFor="text">
+          <Input
+            value={value || undefined}
+            type="search"
+            className={classNames([
+              "outline-none border-none shadow-none",
+              "focus-visible:outline-none focus-visible:ring-0",
+            ])}
+            autoFocus
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                window.open(engineRef.current?.engine + value);
+              }
+            }}
+          />
+        </Label>
       </div>
     </div>
   );

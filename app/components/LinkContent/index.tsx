@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import classNames from "classnames";
 import { NavHomeLinkDataProps } from "~/typings/nav";
 import "./index.css";
+import { LazyImage } from "./LazyImage";
 
 interface LinkContentProps {
   data: NavHomeLinkDataProps[];
@@ -62,11 +63,7 @@ export const LinkContent = (props: LinkContentProps) => {
                       __html: icon || "",
                     }}
                   /> */}
-                  <img
-                    className={classNames(["w-12 h-12", "max-lg:mb-4"])}
-                    src={icon}
-                    alt={name}
-                  />
+                  <LazyImage src={icon} alt={name} />
                   <div className="flex flex-col flex-1 justify-between px-4">
                     <p
                       className={classNames([

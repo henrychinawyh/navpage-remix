@@ -33,18 +33,37 @@ export const meta: MetaFunction = () => [
   { name: "viewport", content: "width=device-width, initial-scale=1" },
   {
     name: "description",
-    content: "翔子的杂货铺 - 一个分享生活、技术和有趣事物的导航网站",
+    content:
+      "翔子的杂货铺 - 一个集成生活、技术、工具和资源的综合导航平台。这里不仅有丰富的技术博客文章、编程资源，还包含日常生活分享、实用工具推荐，以及精心筛选的优质网站链接。让每位访客都能轻松找到有价值的内容。",
   },
-  { name: "keywords", content: "翔子,技术博客,生活分享,导航" },
+  {
+    name: "keywords",
+    content:
+      "翔子,技术博客,生活分享,导航,网址导航,技术教程,编程资源,工具推荐,个人博客,前端开发,技术分享,生活记录,实用工具,资源聚合,效率工具",
+  },
   { name: "author", content: "翔子" },
   { name: "robots", content: "index,follow" },
-  { property: "og:title", content: "翔子的杂货铺" },
+  { name: "mobile-web-app-capable", content: "yes" },
+  { name: "apple-mobile-web-app-capable", content: "yes" },
+  { name: "theme-color", content: "#ffffff" },
+  { property: "og:title", content: "翔子的杂货铺 - 你的个性化导航助手" },
   {
     property: "og:description",
-    content: "一个分享生活、技术和有趣事物的导航网站",
+    content:
+      "发现优质内容的最佳起点！这里汇集了技术博客、生活分享、实用工具和精选资源，助你轻松获取有价值的信息。",
   },
   { property: "og:type", content: "website" },
   { property: "og:image", content: "/icon.svg" },
+  { property: "og:site_name", content: "翔子的杂货铺" },
+  { property: "og:locale", content: "zh_CN" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "翔子的杂货铺 - 你的个性化导航助手" },
+  {
+    name: "twitter:description",
+    content:
+      "发现优质内容的最佳起点！这里汇集了技术博客、生活分享、实用工具和精选资源，助你轻松获取有价值的信息。",
+  },
+  { name: "twitter:image", content: "/icon.svg" },
   { title: "翔子的杂货铺" },
 ];
 

@@ -77,11 +77,7 @@ export const SelectEngine = forwardRef((props, ref) => {
             return (
               <SelectItem key={item.value} value={item.url}>
                 <div className="flex  items-center cursor-pointer">
-                  <img
-                    className="w-4 h-4"
-                    src={item.icon || ""}
-                    alt={item.label}
-                  />
+                  <img className="w-4 h-4" src={item.icon || ""} alt={"图标"} />
                   <span className={classNames(["pl-2 mr-4", "max-lg:text-xs"])}>
                     {item.label}
                   </span>
